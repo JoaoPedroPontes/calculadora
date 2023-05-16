@@ -1,0 +1,85 @@
+#btn-page  div {
+    display:flex;
+}
+main {
+    background-color:rgb(156, 156, 156);
+    margin:0 auto;
+    margin-top:50px;
+}
+button {
+    background-color:rgb(206, 204, 204);
+    border:0;
+}
+button:hover {
+    background-color:rgb(190, 190, 190);
+}
+button:active {
+    background-color:rgb(158, 158, 158);
+}
+#btn-clear {
+    background-color:rgb(240, 159, 159);
+} 
+#btn-clear:hover {
+    background-color:rgb(236, 150, 150);
+}
+#btn-clear:active {
+    background-color:rgb(240, 100, 100);
+}
+input {
+    border:0;
+}
+
+
+@media (max-width:600px) {
+    @layer layout-desktop, layout-phone;
+}
+
+    @layer layout-phone {
+
+    }
+
+    @layer layout-desktop {
+
+        main {
+            height:400px;
+            width:300px;
+            padding:20px;
+        }
+
+        p#operation-select {
+            margin:50px 0px 0px 0px;
+        }
+
+        p#malformed {
+            font-size:15px;
+            margin: 30px 5px 5px 135px;
+            width:200px;
+        }
+
+        #btn-page div div {
+            padding-top:3px;
+            padding-right:4px;
+        }
+
+        #btn-page {
+            margin-top:-50px;
+        }
+    
+        button {
+            width:70px;
+            height:60px;
+            font-size:15px;
+        }
+
+        #btn-clear {
+            margin:0;
+            width:145px;
+            height:40px;
+            font-size:20px;
+        }
+        #btn-zero {
+            width:144px;
+        }
+    
+    }
+
