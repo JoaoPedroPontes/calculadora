@@ -26,7 +26,11 @@ button:active {
     background-color:rgb(240, 100, 100);
 }
 input {
-    border:0;
+    border:2px groove rgb(236, 235, 235);
+    background-color: #cecbcb;
+}
+input:focus {
+    outline:none;
 }
 
 
@@ -41,28 +45,41 @@ input {
     @layer layout-desktop {
 
         main {
-            height:400px;
+            height:410px;
             width:300px;
             padding:20px;
         }
 
+        input {
+            margin:0px 0px 0px 6px;
+            height:60px;
+            width:300px;
+            font-size:27px;
+            text-align:right;
+        }
+
         p#operation-select {
-            margin:50px 0px 0px 0px;
+            margin:9px 0px 45px 0px;
+            font-size:20px;
         }
 
         p#malformed {
             font-size:15px;
-            margin: 30px 5px 5px 135px;
+            margin: -66px 5px 70px 135px;
             width:200px;
+        }
+        p#equation {
+            margin:0px 0px 10px 250px;
+            font-size:18px;
         }
 
         #btn-page div div {
-            padding-top:3px;
-            padding-right:4px;
+            padding-top:2px;
+            padding-right:2px;
         }
 
         #btn-page {
-            margin-top:-50px;
+            margin-top:-64px;
         }
     
         button {
@@ -78,7 +95,7 @@ input {
             font-size:20px;
         }
         #btn-zero {
-            width:144px;
+            width:142px;
         }
     
     }
