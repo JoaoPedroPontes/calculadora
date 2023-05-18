@@ -4,7 +4,7 @@
 main {
     background-color:rgb(156, 156, 156);
     margin:0 auto;
-    margin-top:50px;
+    margin-top:40px;
 }
 button {
     background-color:rgb(206, 204, 204);
@@ -34,18 +34,61 @@ input:focus {
 }
 
 
-@media (max-width:600px) {
+@media (max-width:350px) {
     @layer layout-desktop, layout-phone;
 }
 
     @layer layout-phone {
+        main {
+            width:200px;
+            height:400px;
+        }
 
+        input {
+            width:200px;
+            margin-top:-10px;
+            margin-left:-5px;
+        }
+
+        button {
+            width:50px;
+            height:60px;
+        }
+
+        #btn-page {
+            margin-top:-60px;
+            margin-left:-4px;
+
+        }
+
+        p#equation {
+            margin-left:165px;
+            font-size:17px;
+        }
+
+        p#malformed {
+            margin-left:40px;
+            font-size:13px;
+        }
+
+        p#operation-select {
+            margin-top:-4px;
+        }
+
+        #btn-clear {
+            width:105px;
+            height:35px;
+        }
+
+        #btn-zero {
+            width:102px;
+        }
     }
 
     @layer layout-desktop {
 
         main {
-            height:410px;
+            height:420px;
             width:300px;
             padding:20px;
         }
@@ -53,7 +96,7 @@ input:focus {
         input {
             margin:0px 0px 0px 6px;
             height:60px;
-            width:300px;
+            width:284px;
             font-size:27px;
             text-align:right;
         }
@@ -80,6 +123,7 @@ input:focus {
 
         #btn-page {
             margin-top:-64px;
+            margin-left:5px;
         }
     
         button {

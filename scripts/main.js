@@ -6,38 +6,61 @@ const paragOperationSelect = document.querySelector('#operation-select');
 
 const paragMalformed = document.querySelector('#malformed');
 
-const btns = document.querySelectorAll('[class^="btns-"]');
+const btnsNumbers = document.querySelectorAll('.btns-numbers');
+
+const btnsOperators = document.querySelectorAll('.btns-operators');
 
 const btnEqual = document.querySelector('#btnEqual');
 
-for(var i=0;i<btns.length;i++) {
-    btns[i].onclick = (e) => {
+const btnClear = document.querySelector('#btn-clear');
+
+for(var i=0;i<btnsNumbers.length;i++) {
+    btnsNumbers[i].onclick = (e) => {
         inputValues.value+=e.target.value;
     };
 };
 
-for(var i=0;i)
+for(var i=0;i<btnsOperators.length;i++) {
+    btnsOperators[i].onclick = (e) => {
+        inputValues.value+=e.target.value;
+        paragOperationSelect.textContent=e.target.value;
+    }
+};
 
 
 function verificacao() {
-    let getInputValues = inputValues.value;
+    if(inputValues.value) {
 
-    for(var i=0;i<getInputValues.length;i++) {
-        getInputValues = getInputValues.replace('x','*');
-        getInputValues = getInputValues.replace('÷','/');
-    }
+        let getInputValues = inputValues.value;
 
-    calculo(getInputValues);
-};
+        for(var i=0;i<getInputValues.length;i++) {
+            getInputValues = getInputValues.replace('x','*');
+            getInputValues = getInputValues.replace('÷','/');
+        }
+
+        calculo(getInputValues);
+    };
+}
 
 function calculo(valor) {
     try {
+        paragEquation.textContent = inputValues.value;
         inputValues.value = eval(valor);
         paragMalformed.innerHTML='&nbsp';
     }catch(error) {
+        paragEquation.innerHTML ='$nbsp;';
         paragMalformed.textContent = 'Malformed Expression';
     }
 };
 
 btnEqual.onclick = verificacao;
+
+
+btnClear.onclick = () => {
+    paragEquation.innerHTML = '&nbsp;';
+    inputValues.value = '';
+    paragMalformed.innerHTML= '&nbsp;';
+    paragOperationSelect.innerHTML = '&nbsp;';
+
+}
 
